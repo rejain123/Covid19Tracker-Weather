@@ -96,7 +96,7 @@ const getcityInfo1=(event)=>{
  
  useEffect(() =>  {
    console.log(city)
-       const apikey="68e9b680e860499088f76d6d6ee9da29"
+       const apikey="ae79ca84286b44fba3696444b36d9b12	"
    // console.log(celsius===true)
    // console.log(celsius)
    //   const a="&units=M"
@@ -122,9 +122,9 @@ const getcityInfo1=(event)=>{
    }
    else{
     
-     url=`https://api.weatherbit.io/v2.0/forecast/daily?city=Dublin,CA&key=68e9b680e860499088f76d6d6ee9da29${unit}`;
-     url1=`https://api.weatherbit.io/v2.0/forecast/hourly?city=Dublin,CA&key=68e9b680e860499088f76d6d6ee9da29&hours=48${unit}`
-     url2=`https://api.weatherbit.io/v2.0/current?city=Dublin,CA&key=68e9b680e860499088f76d6d6ee9da29&${unit}`
+     url=`https://api.weatherbit.io/v2.0/forecast/daily?city=Dublin,CA&key=${apikey}${unit}`;
+     url1=`https://api.weatherbit.io/v2.0/forecast/hourly?city=Dublin,CA&key=${apikey}&hours=48${unit}`
+     url2=`https://api.weatherbit.io/v2.0/current?city=Dublin,CA&key=${apikey}&${unit}`
    }
    console.log(url)
  
