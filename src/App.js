@@ -494,7 +494,7 @@ const getcityInfo1=(event)=>{
      </div>
      <div className="app__right">
        <InfoBox state={isState(info.state)}
- 
+ //test commit
 country={info.country} city={city} info={info}/>
  
    <Table />
