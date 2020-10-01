@@ -1,0 +1,18 @@
+.app__bottomInfo{
+display: flex;
+flex-direction: row;
+justify-content: space-evenly;
+background-color: #d6e0f0;
+max-width: 75%;
+position: relative;
+left: 10%;
+padding: 20px;
+margin-bottom: 40px;
+}
+.app__col{
+    display: flex;
+    flex-direction: column;
+}
+.app__data{
+    font-weight: bold;
+}

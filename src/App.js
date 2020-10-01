@@ -10,6 +10,7 @@ import Practice from "./Practice.js"
 import InfoBox from "./InfoBox"
 import Table from "./Table"
 import Linegraph from './Linegraph';
+import BottomInfo from './BottomInfo';
 function App() {
 const[info,SetInfo]=useState([])
 const[city,setCity]=useState("")
@@ -212,6 +213,8 @@ const getcityInfo1=(event)=>{
             aqi:data.data[0].aqi,
             windDirection:data.data[0].wind_cdir_full,
             pod:data.data[0].pod,
+            feelsLikeTemp:data.data[0].app_temp,
+            cloudCoverage:data.data[0].clouds,
             //  sunset:parseFloat(data.data[0].sunset,10) + 5 ,
              uv:data.data[0].uv,
              windspeed:data.data[0].wind_spd,
@@ -428,7 +431,7 @@ const getcityInfo1=(event)=>{
         {<h3>{getTime(sample.time.split("T")[1])}</h3>}
         <img width="50" height="50" src={sample.urlIcon} alt=""/>
  
-        {<h3>{sample.temp}</h3>}
+        {<h3>{sample.temp}°</h3>}
        
  
       </CardContent>
@@ -455,8 +458,8 @@ const getcityInfo1=(event)=>{
      
        <img width="50" height="50" src={data.urlIcon} alt=""/>
          <div className="minMax">
-         <h3>{data.high}</h3>
-         <h3 className="dayMin">{data.low}</h3>
+         <h3>{data.high}°</h3>
+         <h3 className="dayMin">{data.low}°</h3>
  
          </div>
         
@@ -469,26 +472,17 @@ const getcityInfo1=(event)=>{
      
  
    </div>
- 
-   <div  className="app__bottom">
-       <div className="app__bottom__left">
-        {/* <h3>AQI: {currData.aqi}</h3> */}
 
-        <p> <bold className="app__data">AQI: </bold>{currData.aqi}</p>
-        <p> <bold className="app__data">Wind Speed: </bold>{currData.windspeed}</p>
 
-        
-        {/* <h3>Wind Speed: {currData.windspeed} mph</h3> */}
-
-       </div>
-       <div className="app__bottom__right">
-       <h3>UV Index: {currData.uv}</h3>
-       <h3>Wind Direction: {currData.windDirection}</h3>
- 
-       </div>
-     
- 
-       </div>
+ <BottomInfo //Circle with uv index info, etc
+ aqi={currData.aqi}
+ windspeed={currData.windspeed}
+ feelsLikeTemp={currData.feelsLikeTemp}
+ uv={currData.uv}
+ windDirection={currData.windDirection}
+ cloudCoverage={currData.cloudCoverage}
+  />
+  
  
  
      </div>

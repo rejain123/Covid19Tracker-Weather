@@ -79,17 +79,7 @@ padding-left: 30%;
   margin:70px
 }
   
-.app__bottom{
-  display: flex;
-  flex-direction: row;
-  justify-content: space-evenly;
-  padding:20px;
-  /* background-color: #d9ecf2; */
-  max-width: 83%;
-  position: relative;
-  left: 7%;
 
-}
  
 .rectangle{
   height:50px;
@@ -141,6 +131,7 @@ padding-left: 30%;
   padding: 30px;
 }
 
-.app__data{
-  font-weight: bold;
-}
+
+
+
+

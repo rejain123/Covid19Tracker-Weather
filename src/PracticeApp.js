@@ -147,7 +147,7 @@ useEffect(() =>  {
 
 
 
-  SECOND Copy
+  // SECOND Copy
   import React, { useState, useEffect } from 'react';
 import './App.css';
 import weather from "../src/images/Weather2.png" 
