@@ -1,0 +1,33 @@
+.table{
+    max-height: 400px;
+    overflow:scroll;
+}
+.table tr{
+    display: flex;
+    justify-content: space-between;
+    padding:10px 30px
+
+}
+.table__number{
+    font-weight: bold;
+    margin-right: 10%;;
+}
+.table__country{
+    margin-left: 10%;;
+}
+    
+
+.table__label{
+    text-align: center;
+    position: relative; 
+
+    left:20%;
+    font-size: 25px;
+    font-weight: bold;
+    margin: 20px;
+  
+
+}
+.horizontalLine2{
+    width:50%;
+}

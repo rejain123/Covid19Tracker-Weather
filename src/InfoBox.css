@@ -1,0 +1,24 @@
+.covidData{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+
+}
+
+.covid__info{
+    background-color: #f6f6f6;
+    padding:80px;
+
+
+}
+.countryData--selected{
+    /* color:blue; */
+   position: relative;
+   right: 45%;
+}
+.covid_label{
+    text-align: center;
+}
+.horizontal{
+    width: 50%;
+}

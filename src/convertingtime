@@ -1,0 +1,34 @@
+import React from "react";
+import "./styles.css";
+
+export default function App() {
+  function getTime(time) {
+    time=parseInt(time)
+    if (time === 0) {
+      const totalTime = "12am";
+      return totalTime;
+    }  if (time === 12) {
+      const totalTime = "12pm";
+      return totalTime;
+    } else if (time >= 1 && time <= 11) {
+      const totalTime = time + "am";
+      return totalTime;
+    } else if (time >= 13 && time <= 23) {
+      const time_sample = time - 12;
+      const totalTime = time_sample + "pm";
+      return totalTime;
+    }
+  }
+  const temp = "2020-09-05:12";
+
+  const time = temp.split(":");
+  const time1 = time[1];
+  console.log(time1);
+
+  return (
+    <div className="App">
+      {console.log(time1)}
+      {console.log(getTime(time1))}
+    </div>
+  );
+}

@@ -1,38 +1,146 @@
-.App {
-  text-align: center;
+.app_seperation{
+  display:flex;
+}
+.app__left{
+flex:0.75;
+}
+.app__right{
+flex:0.5
+}
+.logo{
+  background-image:url("./images/Weather2.png"); 
+  width: 10%;;
+  height:10%;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.app__header{
+  padding:10px 10px;
+display: flex;
+justify-content: space-between;
+align-items: center;
+background-color:#f1f3f4;
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+ @media(max-width:990px){
+  .logo{
+    margin-right: 10px;
+      width:23%;
+      height:23%;
   }
+  .app_seperation{
+    flex-direction: column;
+  }
+  
+}
+.app__hourlyCard{
+  
+  overflow:scroll;
+  background-color: blue;
+
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.all_hours{
+  margin-left: 4%;
+  width:490px;
+  overflow:scroll;
+
+  
+}
+
+
+@media(min-width:1050px ){
+  .all_hours{
+    width:1025px;
+    /* width:1050px;   */
+  }
+  
+}
+
+.Bottom{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin: 20px;
+}
+.minMax{
+  display: flex;
+}
+.dayMin{
+padding-left: 30%;
+}
+
+.container{
+  max-height:400px;
+  overflow:scroll;
+  padding:15px;
+  /* background-color: #f4f4f4; */
+  /* background-color:#f1f3f8; */
+  background-color: #f6f6f6;
+
+  margin:70px
+}
+  
+.app__bottom{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  padding:20px;
+  /* background-color: #d9ecf2; */
+  max-width: 83%;
+  position: relative;
+  left: 7%;
+
+}
+ 
+.rectangle{
+  height:50px;
+  width:50px;
+  display: inl;
+}
+
+.app_input{
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+
 }
 
-.App-link {
-  color: #61dafb;
+
+.app__search{
+  display: flex;
+  flex-direction: row;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.app__searchIcon{
+  /* align-items: center; */
+  /* position: relative;
+  top: 7px;  
+  right: 20%; */
+  min-height: 54px;
+  background-color:#3282b8;
+  color:white;
+  border-radius: 5%;
+  
+
+}
+
+
+.app__enterInput{
+  font-size: 125%;
+  font-weight: bold;
+}
+
+#textField::placeholder{
+  color:black;
+  font-weight: bold;
+  font-size: 125%;
+}
+
+
+
+
+.app__buttons{
+  padding: 30px;
+}
+
+.app__data{
+  font-weight: bold;
 }
