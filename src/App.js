@@ -177,6 +177,7 @@ const getcityInfo1=(event)=>{
  
          }
        ))
+       
        dailyData.splice(0,1)
        dailyData.splice(13,2)
        setDailyData(dailyData)
