@@ -7,7 +7,7 @@ import background2 from "./images/snow1.jpg"
 import background3 from "./images/foggy.jpg" 
 import background4 from "./images/sunny.jpg" 
 import background5 from "./images/cloudy1.jpg" 
-import background6 from "./images/clearSky.jpg"
+import background6 from "./images/sunnyDay.jpeg"
 import background7 from "./images/nightSky.jpg"
 import background8 from "./images/cloudyNight.jpg"
 

@@ -96,7 +96,7 @@ const getcityInfo1=(event)=>{
  
  useEffect(() =>  {
    console.log(city)
-       const apikey="ae79ca84286b44fba3696444b36d9b12	"
+       const apikey="3d8b13bc0b514fa0b9ef32befd0f58fd		"
    // console.log(celsius===true)
    // console.log(celsius)
    //   const a="&units=M"
@@ -105,7 +105,6 @@ const getcityInfo1=(event)=>{
    
       
     
-   var myInt = parseInt("5"); 
    let url;
    let url1;
    let url2;
@@ -122,9 +121,9 @@ const getcityInfo1=(event)=>{
    }
    else{
     
-     url=`https://api.weatherbit.io/v2.0/forecast/daily?city=Dublin,CA&key=${apikey}${unit}`;
-     url1=`https://api.weatherbit.io/v2.0/forecast/hourly?city=Dublin,CA&key=${apikey}&hours=48${unit}`
-     url2=`https://api.weatherbit.io/v2.0/current?city=Dublin,CA&key=${apikey}&${unit}`
+     url=`https://api.weatherbit.io/v2.0/forecast/daily?city=Chicago,IL&key=${apikey}${unit}`;
+     url1=`https://api.weatherbit.io/v2.0/forecast/hourly?city=Chicago,IL&key=${apikey}&hours=48${unit}`
+     url2=`https://api.weatherbit.io/v2.0/current?city=Chicago,IL&key=${apikey}&${unit}`
    }
    console.log(url)
  
@@ -195,6 +194,7 @@ const getcityInfo1=(event)=>{
    const getCurrData=async()=>{
   
      await fetch(url2)
+
       .then(response=>response.json())
       .then(data=>{
          const currData=
@@ -243,6 +243,7 @@ const getcityInfo1=(event)=>{
    const gethourlyData=async()=>{
      const i=0
      await fetch(url1)
+
       .then(response=>response.json())
       .then(data=>{
          const hourData=data.data.map(each_hour=>(
