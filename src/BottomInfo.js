@@ -1,7 +1,7 @@
 import React from 'react'
 import "./BottomInfo.css"
 
-function BottomInfo({aqi,windspeed,feelsLikeTemp,uv,windDirection,cloudCoverage}) {
+function BottomInfo({aqi,windspeed,feelsLikeTemp,uv,windDirection,cloudCoverage,visibility}) {
     return (
 
         <div className="app__bottomInfo">
@@ -17,7 +17,7 @@ function BottomInfo({aqi,windspeed,feelsLikeTemp,uv,windDirection,cloudCoverage}
 
         <div className="app__col">
         <p  > <bold className="app__data">Feels Like Temp: </bold>{feelsLikeTemp}°</p>
-        <p  > <bold className="app__data">Cloud Coverage: </bold>{cloudCoverage}</p>        </div>
+        <p  > <bold className="app__data">Visibility: </bold>{visibility} mi</p>        </div>
     
 
         </div>

@@ -215,6 +215,7 @@ const getcityInfo1=(event)=>{
             pod:data.data[0].pod,
             feelsLikeTemp:data.data[0].app_temp,
             cloudCoverage:data.data[0].clouds,
+            visibility:data.data[0].vis,
             //  sunset:parseFloat(data.data[0].sunset,10) + 5 ,
              uv:data.data[0].uv,
              windspeed:data.data[0].wind_spd,
@@ -481,6 +482,7 @@ const getcityInfo1=(event)=>{
  uv={currData.uv}
  windDirection={currData.windDirection}
  cloudCoverage={currData.cloudCoverage}
+ visibility={currData.visibility}
   />
   
  

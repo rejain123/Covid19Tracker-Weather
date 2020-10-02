@@ -38,6 +38,14 @@ background-color:#f1f3f4;
 
 }
 
+/* @media(max-width:990px){
+  .app__hourlyCard{
+    max-width: 990px;
+    overflow:scroll;
+    background-color: blue;
+}
+} */
+
 .all_hours{
   margin-left: 4%;
   width:490px;
