@@ -178,6 +178,7 @@ const getcityInfo1=(event)=>{
          }
        ))
        dailyData.splice(0,1)
+       dailyData.splice(13,2)
        setDailyData(dailyData)
        setDailyData(dailyData)
        SetInfo(info)
@@ -453,7 +454,7 @@ const getcityInfo1=(event)=>{
        <div className="container">
      <Container  maxWidth="lg"  />
     
-      
+      {/* {setDailyData(dailyData.splice(0,14))} */}
        {dailyData.map(data=>(
       <div className="Bottom">
        <h3>{data.dateDaily}</h3>
