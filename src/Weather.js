@@ -1,15 +1,13 @@
 import React from 'react'
 import "./Weather.css"
 
-import background from "./images/thunderstorms.png" 
 import background1 from "./images/rain.jpg" 
-import background2 from "./images/snow1.jpg" 
+import background2 from "./images/snow.jpg" 
 import background3 from "./images/foggy.jpg" 
-import background4 from "./images/sunny.jpg" 
-import background5 from "./images/cloudy1.jpg" 
-import background6 from "./images/sunnyDay.jpeg"
-import background7 from "./images/nightSky.jpg"
-import background8 from "./images/cloudyNight.jpg"
+import background4 from "./images/clearCloudy.jpg" 
+import background5 from "./images/sunnyDay.jpg"
+import background6 from "./images/dark_night.jpg"
+import background7 from "./images/cloudyNight.jpg"
 
 
 // import { Container,Card, CardContent } from '@material-ui/core'
@@ -20,6 +18,8 @@ import {Card,Row,Col} from 'react-bootstrap'
 
 
 function Weather({name, country,state,date,cur_min,cur_max,cur_temp,description,icon_code,info,pod}) {
+    console.log(cur_temp,"current temp-weather")
+   
     console.log(pod+"pod")
 
     let backgroundImage;
@@ -43,7 +43,7 @@ function Weather({name, country,state,date,cur_min,cur_max,cur_temp,description,
          if(icon_code>=200 && icon_code<=233) //thunderstorm
         {
             divStyle={
-                backgroundImage: `url(${background})`
+                backgroundImage: `url(${background1})`
 
             }
         }
@@ -69,14 +69,14 @@ function Weather({name, country,state,date,cur_min,cur_max,cur_temp,description,
         
         else if (pod==="d"&&icon_code==800   ){ //sunny
             divStyle={
-                backgroundImage: `url(${background6})`
+                backgroundImage: `url(${background5})`
 
             }
         }
 
         else if (pod==="n" && icon_code==800 ){ //sunny
             divStyle={
-                backgroundImage: `url(${background7})`
+                backgroundImage: `url(${background6})`
 
             }
         }
@@ -86,7 +86,7 @@ function Weather({name, country,state,date,cur_min,cur_max,cur_temp,description,
         else if (pod==="d"&&icon_code>=801 && icon_code<=804){ //cloudy
             console.log(icon_code)
             divStyle={
-                backgroundImage: `url(${background5})`
+                backgroundImage: `url(${background4})`
 
             }
     
@@ -95,7 +95,7 @@ function Weather({name, country,state,date,cur_min,cur_max,cur_temp,description,
         else if (pod==="n" && icon_code>=801 && icon_code<=804){ //cloudy
             console.log(icon_code)
             divStyle={
-                backgroundImage: `url(${background8})`
+                backgroundImage: `url(${background7})`
 
             }
     

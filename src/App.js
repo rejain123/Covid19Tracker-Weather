@@ -29,27 +29,36 @@ const[sunset1,setSunset1]=useState("")
 const[sunset2,setSunset2]=useState("")
 
  
- 
+function testing(city_name){
+  return ( /\s/g.test(city_name))
+  
+}
 const getcityInfo1=(event)=>{
   console.log(event)
  console.log(input)
  if (input!=""){
-  const temp1=input.split(",")
+  var temp1=input.split(",")
+  
    setCity(temp1[0])
+    // testing(temp1[0])===true? setCity(temp1[0].replace(/\s/g, '')):setCity(temp1[0])
+
    temp1[1]? setState(temp1[1]):setState("");
   //  event.target.value="";
  
  }
 
 }
+
+
  const getcityInfo=(event)=>{
   
    if(event.key==="Enter" ){
      
-     const temp=event.target.value.split(",")
+     var temp=event.target.value.split(",")
      // event.preventDefault()
      console.log(temp)
      setCity(temp[0])
+    //  testing(temp[0])===true? setCity(temp[0].replace(/\s/g, '')):setCity(temp[0])
      // setState(temp[1])
       temp[1]? setState(temp[1]):setState("");
       event.target.placeholder="Enter City,State"
@@ -58,6 +67,8 @@ const getcityInfo1=(event)=>{
  
      
    }
+   console.log(city,"cityyy")
+
    
 
    
@@ -96,7 +107,7 @@ const getcityInfo1=(event)=>{
  
  useEffect(() =>  {
    console.log(city)
-       const apikey="3d8b13bc0b514fa0b9ef32befd0f58fd		"
+       const apikey="0402e9bd1c384a0ab953752fc904c7d2	"
    // console.log(celsius===true)
    // console.log(celsius)
    //   const a="&units=M"
@@ -111,11 +122,11 @@ const getcityInfo1=(event)=>{
    if ((city!=="") && (state!=="")){
       url=`https://api.weatherbit.io/v2.0/forecast/daily?city=${city},${state}&key=${apikey}${unit}`;
       url1=`https://api.weatherbit.io/v2.0/forecast/hourly?city=${city},${state}&key=${apikey}&hours=48${unit}`;
-      url2=`https://api.weatherbit.io/v2.0/current?city=${city},${state}&key=8734036032b349389e0f99405a265d38&${unit}`
+      url2=`https://api.weatherbit.io/v2.0/current?city=${city},${state}&key=${apikey}${unit}`;
  
    }
    else if ((city!=="") && (state==="")){
-     url= `https://api.weatherbit.io/v2.0/forecast/daily?city=${city},&key=${apikey}${unit}`;
+     url= `https://api.weatherbit.io/v2.0/forecast/daily?city=${city}&key=${apikey}${unit}`;
      url1=`https://api.weatherbit.io/v2.0/forecast/hourly?city=${city}&key=${apikey}&hours=48${unit}`
      url2=`https://api.weatherbit.io/v2.0/current?city=${city}&key=${apikey}${unit}`
    }
@@ -123,9 +134,10 @@ const getcityInfo1=(event)=>{
     
      url=`https://api.weatherbit.io/v2.0/forecast/daily?city=Chicago,IL&key=${apikey}${unit}`;
      url1=`https://api.weatherbit.io/v2.0/forecast/hourly?city=Chicago,IL&key=${apikey}&hours=48${unit}`
-     url2=`https://api.weatherbit.io/v2.0/current?city=Chicago,IL&key=${apikey}&${unit}`
+     url2=`https://api.weatherbit.io/v2.0/current?city=Chicago,IL&key=${apikey}${unit}`
    }
    console.log(url)
+   console.log(city,"CITY")
  
    const getCityData=async()=>{
    
@@ -149,12 +161,6 @@ const getcityInfo1=(event)=>{
          cur_min:data.data[0].min_temp,
          cur_max:data.data[0].max_temp,
          
-         // date:data.data[0].datetime,
-         // cur_temp:data.data[0].temp,
-         // description:data.data[0].weather.description,
-         // icon_code:data.data[0].weather.code,
-         // windspeed:data.data[0].wind_spd,
-         // uv:data.data[0].uv,
  
        
  
@@ -183,6 +189,8 @@ const getcityInfo1=(event)=>{
        setDailyData(dailyData)
        setDailyData(dailyData)
        SetInfo(info)
+       console.log(url,"url")
+
      })
  
      .catch(e=>console.log(e.message))
@@ -197,9 +205,13 @@ const getcityInfo1=(event)=>{
   
      await fetch(url2)
 
+
       .then(response=>response.json())
       .then(data=>{
+
+        
          const currData=
+  
  
           
            {
@@ -210,8 +222,6 @@ const getcityInfo1=(event)=>{
              icon_code:data.data[0].weather.code,
              // cur_min:data.data[0].min_temp,
              // cur_max:data.data[0].max_temp,
-             sunrise:data.data[0].sunrise + 5,
-            sunset:data.data[0].sunset,
             aqi:data.data[0].aqi,
             windDirection:data.data[0].wind_cdir_full,
             pod:data.data[0].pod,
@@ -221,13 +231,16 @@ const getcityInfo1=(event)=>{
             //  sunset:parseFloat(data.data[0].sunset,10) + 5 ,
              uv:data.data[0].uv,
              windspeed:data.data[0].wind_spd,
+             precipitation:data.data[0].precip
  
  
-          
+
  
            }
            setcurrData(currData)
- 
+
+           console.log(url2,"url2")
+
           
         
          
@@ -239,6 +252,7 @@ const getcityInfo1=(event)=>{
   
     
     }
+
    
  
    
@@ -263,6 +277,8 @@ const getcityInfo1=(event)=>{
            }))
  
            SetHourData(hourData)
+           console.log(url1,"url1")
+
         
          
         
@@ -276,21 +292,25 @@ const getcityInfo1=(event)=>{
     }
     SetCelsius(false)
     SetFarenheit(false)
+
+      getCurrData()
+
+      getCityData()
+      gethourlyData()
+    
  
- 
-   getCityData()
-   gethourlyData()
-   getCurrData()
+  
    // setTime([])
  
  }, [city,state,farenheit,celsius])
+
  // console.log(hourData.timestamp_local)
  console.log(hourData.date)
  console.log(hourData)
  console.log(hourTemp)
  console.log(dailyData)
  
- 
+ console.log(currData.cur_temp,"current temp")
  
  function isState(state) {
    if (isNaN(state)!=true){
@@ -334,7 +354,6 @@ const getcityInfo1=(event)=>{
    // }, [city,state])
    // console.log(Icon)
    // const urlIcon= `https://www.weatherbit.io/static/img/icons/${data.icon}.png`
- 
    function sample(){
      return(
        <TextField  onChange={e=> SetInput(e.target.value)} onKeyPress={getcityInfo} placeholder="Enter city,state" value="" variant="outlined" ></TextField>
@@ -477,7 +496,7 @@ const getcityInfo1=(event)=>{
  
    </div>
 
-
+{console.log(currData.visibility,"visibilityyy")}
  <BottomInfo //Circle with uv index info, etc
  aqi={currData.aqi}
  windspeed={currData.windspeed}
@@ -486,6 +505,7 @@ const getcityInfo1=(event)=>{
  windDirection={currData.windDirection}
  cloudCoverage={currData.cloudCoverage}
  visibility={currData.visibility}
+ precipitation={currData.precipitation}
   />
   
  
