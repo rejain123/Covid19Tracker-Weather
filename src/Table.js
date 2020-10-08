@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react'
 import "./Table.css"
 import Linegraph from './Linegraph'
 import numeral from "numeral";
+import CountiesData from "./CountiesData"
 export default function Table() {
     const [caseData,SetCaseData]=useState([])
     const[lineData,SetLineData]=useState([])
@@ -81,7 +82,9 @@ export default function Table() {
 
    
         </div>
-        {getLineData()}
+
+
+        {/* {getLineData()}
         <Linegraph 
         case1={temp[0]}
         case2={temp[1]}
@@ -96,7 +99,7 @@ export default function Table() {
 
 
 
-    />
+    /> */}
 
         </div>
        

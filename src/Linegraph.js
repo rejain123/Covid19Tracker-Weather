@@ -3,7 +3,8 @@ import {Bar} from 'react-chartjs-2';
 import "./Linegraph.css"
 import numeral from "numeral"
 function Linegraph({case1,case2,case3,case4,case5,case1Country,case2Country,case3Country,case4Country,case5Country}) {
-
+ 
+  
 
 const highestCases=[]
 const state = {
@@ -17,6 +18,9 @@ const state = {
       borderColor:"rgb(0,100,180)" ,
 
       borderWidth: 2,
+     
+      minBarLength:5,
+
       data: [case1,case2,case3,case4,case5]
     }
   ]
@@ -27,11 +31,24 @@ const state = {
       <div className="lineGraph">
         <Bar
           data={state}
+         
+          
           options={{
             title:{
               display:true,
-              text:'Top 5 Countries with the Highest # of Coronavirus Cases',
-              fontSize:20
+              text:'# of Coronavirus Cases per County in the last 5 days',
+              fontSize:20,
+              scales: {
+                            yAxes: [{
+                            
+                                ticks: {
+                                    min: 50,
+                                    stepSize:10
+                                }
+                            }]
+                        }
+              
+              
             },
             legend:{
               display:true,

@@ -1,13 +1,16 @@
 import React, { useState,useEffect, useRef } from 'react'
 import {Card,CardContent} from '@material-ui/core';
 import "./InfoBox.css"
+
+
+
 function InfoBox({state,country,city,info}) {
     const [covidData,setCovidData]= useState([])
     const [covidDataCountry,setCovidDataCountry]= useState([])
     const[isThereState,setIsThereState]=useState(true)
     console.log(state)
-    
-    var states = [
+
+    const states = [
         ['Arizona', 'AZ'],
         ['Alabama', 'AL'],
         ['Alaska', 'AK'],
@@ -59,6 +62,7 @@ function InfoBox({state,country,city,info}) {
         ['Wisconsin', 'WI'],
         ['Wyoming', 'WY'],
     ];
+    
 
     function getStateName (states,abbrev){
         for (var i=0;i<states.length;i++){
@@ -66,7 +70,13 @@ function InfoBox({state,country,city,info}) {
                 return (states[i][0])
             }
         }
-    }
+    } 
+
+   
+    
+   
+   
+   
     let stateName;
         var urlState=useRef(null)
         useEffect(() => {

@@ -44,6 +44,7 @@ function Weather({name, country,state,date,cur_min,cur_max,cur_temp,description,
         {
             divStyle={
                 backgroundImage: `url(${background1})`
+                
 
             }
         }
@@ -67,7 +68,7 @@ function Weather({name, country,state,date,cur_min,cur_max,cur_temp,description,
         }
        
         
-        else if (pod==="d"&&icon_code==800   ){ //sunny
+        else if (pod==="d" && icon_code==800   ){ //sunny
             divStyle={
                 backgroundImage: `url(${background5})`
 

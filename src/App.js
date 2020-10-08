@@ -11,6 +11,8 @@ import InfoBox from "./InfoBox"
 import Table from "./Table"
 import Linegraph from './Linegraph';
 import BottomInfo from './BottomInfo';
+import CountiesData from "./CountiesData.js"
+
 function App() {
 const[info,SetInfo]=useState([])
 const[city,setCity]=useState("")
@@ -27,6 +29,7 @@ const [time,setTime]=useState([]);
 const[currData,setcurrData]=useState([])
 const[sunset1,setSunset1]=useState("")
 const[sunset2,setSunset2]=useState("")
+
 
  
 function testing(city_name){
@@ -508,7 +511,8 @@ const getcityInfo1=(event)=>{
  precipitation={currData.precipitation}
   />
   
- 
+  {console.log("byee",isState(info.state))}
+
  
      </div>
      <div className="app__right">
@@ -517,6 +521,12 @@ const getcityInfo1=(event)=>{
 country={info.country} city={city} info={info}/>
  
    <Table />
+   <CountiesData
+   state={isState(info.state)}
+   city={city}
+    />
+
+
      </div>
      </div>
  
