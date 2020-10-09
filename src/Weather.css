@@ -3,20 +3,24 @@
     background-size: cover;
     background-repeat: no-repeat;
   background-position: top center;
-    opacity: 0.8;
+    opacity: 0.65;
     margin: 50px;
 
 }
 .weather__top{
     opacity: 1;
     font-weight: bold;
-    color:white;  
+    color:white; 
+  
     /* color:black; */
     text-align: center;
     padding-top: 1%;
 }
 .name{
-    font-size:40px;    
+    font-size:45px;  
+    font-weight:bold;
+    opacity: 1;
+  
 }
 
 .description{
@@ -72,6 +76,6 @@ margin-left: 3%;
 
 }
 
-background1{
-    opacity: 0.3;
+.background1{
+    opacity: 0.1;
 }

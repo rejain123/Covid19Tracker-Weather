@@ -36,7 +36,7 @@ const state = {
           options={{
             title:{
               display:true,
-              text:'# of Coronavirus Cases per County in the last 5 days',
+              text:'# of Coronavirus Cases in the last 5 days',
               fontSize:20,
               scales: {
                             yAxes: [{

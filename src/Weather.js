@@ -68,11 +68,15 @@ function Weather({name, country,state,date,cur_min,cur_max,cur_temp,description,
         }
        
         
-        else if (pod==="d" && icon_code==800   ){ //sunny
+        else if (pod==="d" && icon_code==800   ){
+            //sunny
             divStyle={
                 backgroundImage: `url(${background5})`
 
+
             }
+
+
         }
 
         else if (pod==="n" && icon_code==800 ){ //sunny
@@ -88,6 +92,7 @@ function Weather({name, country,state,date,cur_min,cur_max,cur_temp,description,
             console.log(icon_code)
             divStyle={
                 backgroundImage: `url(${background4})`
+            
 
             }
     
@@ -122,9 +127,9 @@ function Weather({name, country,state,date,cur_min,cur_max,cur_temp,description,
 
 
         <div className="weather__top">
-            <h2 className="name font_fam">{name}</h2>
-            <h2 className="description font_fam">{description}</h2>
-            <h2 className="cur__temp font_fam">{cur_temp}°</h2>
+            <p className="name font_fam">{name}</p>
+            <p className="description font_fam">{description}</p>
+            <p className="cur__temp font_fam">{cur_temp}°</p>
         
         </div>
         

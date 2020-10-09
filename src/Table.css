@@ -1,6 +1,7 @@
 .table{
     max-height: 400px;
     overflow:scroll;
+    padding-bottom: 15px;
 }
 .table tr{
     display: flex;

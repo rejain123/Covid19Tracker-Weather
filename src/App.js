@@ -110,7 +110,7 @@ const getcityInfo1=(event)=>{
  
  useEffect(() =>  {
    console.log(city)
-       const apikey="0402e9bd1c384a0ab953752fc904c7d2	"
+       const apikey="cbe631ba063e4a198c1522a83bfb2c8f	"
    // console.log(celsius===true)
    // console.log(celsius)
    //   const a="&units=M"
