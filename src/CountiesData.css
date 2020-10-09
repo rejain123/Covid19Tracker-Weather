@@ -1,0 +1,27 @@
+.data{
+    display: flex;
+    flex-direction: row;
+}
+
+.selectButton{
+   margin-right: 50px;
+   padding:1px;
+   width: 100px;
+}
+
+.Counties__title{
+    text-align: center;
+
+
+    font-size: 25px;
+    font-weight: bold;
+    margin: 20px;
+
+   
+}
+
+.Counties__subtitle{
+    text-align: center;
+    font-size: 15px;
+    font-weight: 500;
+}
