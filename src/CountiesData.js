@@ -21,11 +21,10 @@ import Linegraph from './Linegraph';
 
 function CountiesData({state,city}) {
     const [county,setCounty]=useState([])
-    const [country,setCountry]=useState([])
-    const[countryCases,setCountryCases]=useState([])
-    const[countryDates,setCountryDates]=useState([])
-    const[countryName,setCountryName]=useState("")
+   
     const[countyName,setCountyName]=useState("")
+   var list1=[];
+    var list2=[];
 
     
 
@@ -108,6 +107,11 @@ const states = [
     let stateName;
         var urlState=useRef(null)
     useEffect(() => {
+        list1=[]
+        list2=[]
+        setCounty([])
+      
+       
         console.log(state,"stateee")
         state!=null? stateName=getStateName(states,state)?.toLowerCase(): stateName=null
         console.log(stateName,'statename')
@@ -141,52 +145,15 @@ const states = [
                 
 
         }
-       
- 
-        function onCountyChange(event){
-
-
-            const county_name=event.target.value
-            
-            if(county.county_value===county_name){
-                console.log()
-
-            }
-            // const getCounty_data=async()=>{
-            //     await fetch()
-    
-            // }
-        }
-
-        
+        // else{
+        //     const county=[]
+        // }
      
-
-
-        
+               
     }, [city,state])
     console.log(county)
 
-    useEffect(() => {
-        const getData1=async(event)=>{
-            const url1="https://disease.sh/v3/covid-19/countries"
-            await fetch(url1)
-            .then(response=>response.json())
-            .then(data=>{
-                  const country=data.map(each_country=>(
-                      {
-                        country1:each_country.country
 
-
-                      }
-    
-                ))
-                setCountry(country)
-            })
-    
-        }
-        getData1()
-        
-        }, [])
    
    const getData=async (event)=>{
         const countyName=event.target.value
@@ -218,25 +185,18 @@ const states = [
             .catch(e=>alert("Data not found for this county"))
 
             console.log(event.target,"event.targ")
+
             event.target.value=""
         
 
     }
-        function testing(){
-            specificData.map(county_sample=>{
-                if (county_sample.county===county){
-                    var cases=specificData.cases
-                    console.log(cases)
-                    return cases
-                }}
-            )
-}
+   
         
     console.log(specificData)
 
     function sameCounties(){
-        const list1=[];
-        const list2=[];
+        // const list1=[];
+        // const list2=[];
         var stateName1;
         specificData.map((each_state)=>{
                 console.log(state,"state")
@@ -251,14 +211,7 @@ const states = [
                 list2.push(each_state.date  )
 
 
-                // return(
-                //     <h1>hiiii</h1>
-                    // <div className="data">
-                    // <p>{each_state.cases} </p>
-                    // <p> {each_state.state}</p>
-                    // <p>{each_state.date} </p>
-                   
-                    // </div>
+          
 
                     
            
@@ -294,90 +247,44 @@ case5Country={list2[29]}
         
     )
 }
-// else{
-//     return (
-//         <h1>No counties Data available </h1>
-//     )
-// }
 
 
 
         
     }
-    // const[listDates,setListDates]=useState([])
-    // const[listCases,setListCases]=useState([])
-    var listDates=[]
-    var listCases=[]
+
+   
     
 
-    const getdataCountry = async  (event)=>{
-    //    const listDate=[]
-    //     listCases=[]
-        var countryName=event.target.value;
-        setCountryName(countryName)
-        
-        console.log(countryName,"countryName")
-        const url2=`https://disease.sh/v3/covid-19/historical/${countryName}?lastdays=30`;
-        console.log(url2)
-        
-        await fetch(url2)
-        .then(response=>response.json())
-        .then(data=>{
+   
+           
             
-            // console.log(data.timeline.cases,"cases")
-            for(let date in data.timeline.cases){
-                    listCases.push(data.timeline.cases[date])
-                  listDates.push(date)
+
+     
+        function select(){
+           
+
+            console.log(county,"DATA IS HERE")
+
+            if (county.length>0){
+                return(
+
                     
-                 
-            }
-            console.log(listDates,"dateee")
-            event.target.value=""
-           
-
-           
+                    county.map(data=>(
             
-
-        })
-
-        .catch(e=>alert("Data not found for this country"))
-        setCountryCases(listCases)
-        setCountryDates(listDates)
-
-
-        // console.log(listCases,"listcasesss")
-        // console.log(listCases,"listcases") 
-    }
-
-    function CountryCasesDate(){
-        console.log(listCases,"listcasesimpt")
-        if(countryCases.length!==0){
-            return (
-                <div> 
-                <h2>{countryName}</h2>
-                {console.log(country,"countryyyy")}
-                <Linegraph 
-                case1={countryCases[25]}
-                case2={countryCases[26]}
-                case3={countryCases [27]}
-                case4={countryCases[28]}
-                case5={countryCases[29]}
-                case1Country={countryDates[25]}
-                case2Country={countryDates[26]}
-                case3Country={countryDates[27]}
-                case4Country={countryDates[28]}
-                case5Country={countryDates[29]}
-                /></div>
+                        <MenuItem value={data.county_value}>{data.county_value}</MenuItem>
+                     )) 
+                )
                
-            
-                
-            
-                
-            )
-        }       
+            }
+            else{
+                return(
+                    <MenuItem >No data Available</MenuItem>
 
-    }
-        
+                )
+
+            }
+        }
     
 
 
@@ -385,37 +292,28 @@ case5Country={list2[29]}
    
     return (
         <div className="Counties">
-        <p className="Counties__title"> Counties/Country Covid Data - Last 5 Days</p>
-        <p className="Counties__subtitle">Pick your county or country to get the latest trend on Covid 19 cases</p>
+        <p className="Counties__title"> Graph of Counties Covid Data - Last 5 Days</p>
+        <p className="Counties__subtitle">Pick your county to get the latest visual trend on Covid 19 cases</p>
       
             <FormControl>
-        <InputLabel>Counties</InputLabel>
+        <InputLabel className="selectLabel ">Counties</InputLabel>
 
-        <Select className="selectButton" onChange={getData} variant="standard" value={state}> 
-
-        {county.map(data=>(
+        <Select className="selectLabel button" onChange={getData} variant="standard" value={state}> 
+        {select()}
+        {/* {county?.map(data=>(
             
             <MenuItem value={data.county_value}>{data.county_value}</MenuItem>
-         ))}
+         ))} */}
+        
              {/* {console.log(county.county_data)} */}
         </Select>          
         
         </FormControl>
        
-        <FormControl>
-        <InputLabel>Countries</InputLabel>
-        <Select className="selectButton" onChange={getdataCountry}  variant="standard" > 
-        {country.map(data=>(
-            
-            <MenuItem value={data.country1}>{data.country1}</MenuItem>
-         ))}
-             {/* {console.log(county.county_data)} */}
-        </Select>          
-        
-        </FormControl>
+    
         {sameCounties()}
 
-        {CountryCasesDate()}
+        
         {/* {getdataCountry()} */}
             
         </div>

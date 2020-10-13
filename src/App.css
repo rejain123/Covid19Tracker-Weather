@@ -1,145 +1,129 @@
 .app_seperation{
   display:flex;
-}
-.app__left{
-flex:0.75;
-}
-.app__right{
-flex:0.5
-}
-.logo{
-  background-image:url("./images/Weather2.png"); 
+ }
+ .app__left{
+ flex:0.55;
+ }
+ .app__right{
+ flex:0.45
+ }
+ .logo{
+  background-image:url("./images/Weather2.png");
   width: 10%;;
   height:10%;
-}
-
-.app__header{
+ }
+  
+ .app__header{
   padding:10px 10px;
-display: flex;
-justify-content: space-between;
-align-items: center;
-background-color:#f1f3f4;
-}
+ display: flex;
+ justify-content: space-between;
+ align-items: center;
+ background-color:#f1f3f4;
+ }
  @media(max-width:990px){
   .logo{
     margin-right: 10px;
       width:23%;
       height:23%;
   }
+  
   .app_seperation{
     flex-direction: column;
   }
-  
-}
-.app__hourlyCard{
-  
-  overflow:scroll;
+  }
+ .app__hourlyCard{
+   overflow:scroll;
   background-color: blue;
-
-}
-
-/* @media(max-width:990px){
-  .app__hourlyCard{
-    max-width: 990px;
-    overflow:scroll;
-    background-color: blue;
-}
-} */
-
-.all_hours{
-  margin-left: 4%;
-  width:490px;
-  overflow:scroll;
-
   
-}
-
-
-@media(min-width:1050px ){
+ }
+ 
+  
+ .all_hours{
+  margin-left: 4%;
+  /* width:490px; */
+  /* width: 100%; */
+  overflow:scroll;
+  
+  }
+ 
+ @media(min-width:1050px ){
   .all_hours{
-    width:1025px;
+    max-width: 700px;
+    object-fit: contain;
+    /* width:1025px; */
     /* width:1050px;   */
   }
+  }
   
-}
-
-.Bottom{
+ .Bottom{
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   margin: 20px;
-}
-.minMax{
+ }
+ .minMax{
   display: flex;
-}
-.dayMin{
-padding-left: 30%;
-}
-
-.container{
+ }
+ .dayMin{
+ padding-left: 30%;
+ }
+  
+ .container{
   max-height:400px;
   overflow:scroll;
   padding:15px;
   /* background-color: #f4f4f4; */
   /* background-color:#f1f3f8; */
   background-color: #f6f6f6;
-
-  margin:70px
-}
   
-
- 
-.rectangle{
+  margin:70px
+ }
+  .app__bottom{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  padding:20px;
+  
+ }
+ .rectangle{
   height:50px;
   width:50px;
   display: inl;
-}
-
-.app_input{
+ }
+  
+ .app_input{
   display: flex;
   flex-direction: column;
-
-}
-
-
-.app__search{
+  
+ }
+  
+  
+ .app__search{
   display: flex;
   flex-direction: row;
-}
-
-.app__searchIcon{
+ }
+  
+ .app__searchIcon{
   /* align-items: center; */
   /* position: relative;
-  top: 7px;  
+  top: 7px; 
   right: 20%; */
   min-height: 54px;
   background-color:#3282b8;
   color:white;
   border-radius: 5%;
   
-
-}
-
-
-.app__enterInput{
+ }
+  
+  
+ .app__enterInput{
   font-size: 125%;
   font-weight: bold;
-}
-
-#textField::placeholder{
+ }
+  
+ #textField::placeholder{
   color:black;
   font-weight: bold;
   font-size: 125%;
-}
-
-
-
-
-.app__buttons{
-  padding: 30px;
-}
-
-
-
-
-
+ }
+ 

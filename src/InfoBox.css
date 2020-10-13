@@ -8,6 +8,9 @@
 .covid__info{
     background-color: #f6f6f6;
     padding:80px;
+    position: relative;
+    margin-right: 20px;
+    /* top: 3%; */
 
 
 }

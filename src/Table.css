@@ -2,6 +2,7 @@
     max-height: 400px;
     overflow:scroll;
     padding-bottom: 15px;
+    margin: 30px;
 }
 .table tr{
     display: flex;
