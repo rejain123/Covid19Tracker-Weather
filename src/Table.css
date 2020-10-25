@@ -23,12 +23,18 @@
     text-align: center;
     position: relative; 
 
-    left:20%;
+    left:15%;
     font-size: 25px;
     font-weight: bold;
     margin: 20px;
   
 
+}
+@media(max-width:990px){
+    .table__label{
+        left:5%;
+
+    }
 }
 .horizontalLine2{
     width:50%;

@@ -151,7 +151,7 @@ function Weather({name, country,state,date,cur_min,cur_max,cur_temp,description,
            
         
         </div>
-        <hr />  
+        {/* <hr />   */}
      
         </div>
         

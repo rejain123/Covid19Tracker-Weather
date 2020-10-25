@@ -1,3 +1,4 @@
+ 
 .app_seperation{
   display:flex;
  }
@@ -12,50 +13,71 @@
   width: 10%;;
   height:10%;
  }
-  
- .app__header{
+  .app__header{
   padding:10px 10px;
  display: flex;
  justify-content: space-between;
  align-items: center;
  background-color:#f1f3f4;
+ width: 100%;
+ object-fit: contain;
  }
  @media(max-width:990px){
+  .app__header{
+    /* width: 100%; */
+  }
   .logo{
     margin-right: 10px;
       width:23%;
       height:23%;
-  }
+    }
+      body{
+        display: flex;
+        flex-direction: column;
+        max-width: fit-content;
+      }
   
-  .app_seperation{
+   .app_seperation{
+     display: flex;
     flex-direction: column;
+
   }
+  .container{
+    width: 70%;
+    position: relative;
+    right: 5%;
   }
- .app__hourlyCard{
+
+  
+  .all_hours{
+    margin-left: 15%;
+    width:70%;
+    /* width: 100%; */
+    overflow:scroll;
+  
+    ;
+     }
+   }
+ /* .app__hourlyCard{
    overflow:scroll;
   background-color: blue;
+  } */
   
- }
- 
-  
- .all_hours{
-  margin-left: 4%;
-  /* width:490px; */
-  /* width: 100%; */
-  overflow:scroll;
-  
-  }
- 
  @media(min-width:1050px ){
   .all_hours{
-    max-width: 700px;
+    max-width: 650px;
     object-fit: contain;
+    overflow:scroll;
+ 
+      position: relative;
+      left: 8%;
+  
+
     /* width:1025px; */
     /* width:1050px;   */
   }
   }
-  
- .Bottom{
+  .Bottom{
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -67,63 +89,54 @@
  .dayMin{
  padding-left: 30%;
  }
-  
- .container{
+  .container{
   max-height:400px;
   overflow:scroll;
   padding:15px;
   /* background-color: #f4f4f4; */
   /* background-color:#f1f3f8; */
   background-color: #f6f6f6;
-  
-  margin:70px
+   margin:70px
  }
   .app__bottom{
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
   padding:20px;
-  
- }
+  }
  .rectangle{
   height:50px;
   width:50px;
   display: inl;
  }
-  
- .app_input{
+  .app_input{
   display: flex;
   flex-direction: column;
-  
- }
-  
+  }
   
  .app__search{
   display: flex;
   flex-direction: row;
  }
-  
- .app__searchIcon{
+  .app__searchIcon{
   /* align-items: center; */
   /* position: relative;
-  top: 7px; 
+  top: 7px;
   right: 20%; */
   min-height: 54px;
   background-color:#3282b8;
   color:white;
   border-radius: 5%;
-  
- }
-  
+  }
   
  .app__enterInput{
   font-size: 125%;
   font-weight: bold;
  }
-  
- #textField::placeholder{
+  #textField::placeholder{
   color:black;
   font-weight: bold;
   font-size: 125%;
  }
+ 
  

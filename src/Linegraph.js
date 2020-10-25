@@ -37,13 +37,13 @@ const state = {
             title:{
               display:true,
               text:'# of Coronavirus Cases in the last 5 days',
-              fontSize:20,
+              fontSize:5,
               scales: {
                             yAxes: [{
                             
                                 ticks: {
                                     min: 50,
-                                    stepSize:10
+                                    // stepSize:200
                                 }
                             }]
                         }

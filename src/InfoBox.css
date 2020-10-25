@@ -7,13 +7,19 @@
 
 .covid__info{
     background-color: #f6f6f6;
-    padding:80px;
+    padding:40px;
     position: relative;
     margin-right: 20px;
     /* top: 3%; */
 
 
 }
+
+@media(max-width:990px){
+    .covid__info{
+      padding: 5%;
+    }
+    }
 .countryData--selected{
     /* color:blue; */
    position: relative;

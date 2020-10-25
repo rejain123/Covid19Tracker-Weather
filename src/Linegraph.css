@@ -1,7 +1,18 @@
 .lineGraph{
     margin-top: 30px;
-    margin:50px;
+     margin:50px;
     padding:30px;
+
     background-color: #f6f6f6;
 
+}
+
+@media(max-width:990px){
+    .lineGraph{
+        padding: 20px;
+        width: 85%;
+        height: 70%;
+        position: relative;
+        right: 10%;
+    }
 }
